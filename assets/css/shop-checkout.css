@@ -1,0 +1,102 @@
+/* ! Reset */
+
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", serif;
+}
+a {
+  text-decoration: none;
+}
+input,
+textarea,
+select,
+button {
+  border: none;
+  outline: none;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.red {
+  background: red;
+}
+.green {
+  background: green;
+}
+.blue {
+  background: blue;
+}
+.container,
+.row {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ! Navbar */
+.nav__logo {
+  font-size: 32px;
+  color: #0376cb;
+}
+
+/* !Checkout Address */
+.left__arrow {
+  width: 24px;
+}
+.title_address::after {
+  position: absolute;
+  content: "";
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #b3b3b3;
+}
+.line {
+  width: 100%;
+  height: 2px;
+  background: #b3b3b3;
+  margin: 16px 0;
+}
+.line-2 {
+  width: 100%;
+  height: 10px;
+  background: #d4d2d2;
+  margin: 16px 0;
+}
+
+/* !Checkout Products */
+.checkout__shop {
+  font-size: 18px;
+  font-weight: 600;
+}
+.shop__img {
+  width: 32px;
+}
+.product__card {
+  border: none;
+  border-radius: 0;
+}
+.rounded-start {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
