@@ -4,19 +4,47 @@ function setLocalStorage(params)
 }
 
 let btnSubmit = document.getElementById('button_submit').addEventListener('click', function(event) {
-    event.preventDefault()
-    let elementNama = document.getElementById('nama').value;
-    let elementEmail = document.getElementById('email').value;
-    let elementPassword1 = document.getElementById('password').value;
-    let elementPassword2 = document.getElementById('password_2').value;
+    event.preventDefault();
+    let nama = document.getElementById('nama').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let password_2 = document.getElementById('password_2').value;
 
-    let dataUsers = 
-    {
-        elementNama:elementNama,
-        elementEmail:elementEmail,
-        elementPassword1:elementPassword1,
-        elementPassword2:elementPassword2
+    if (!validatePasswords(password, password_2)) {
+        alert("Password dan konfirmasi password tidak cocok!"); 
+        return; 
     }
 
-    setLocalStorage(dataUsers);
-})
+    let dataUsers = {
+        nama: nama,
+        email: email,
+        password: password
+    };
+
+    sendDataToAPI(dataUsers);
+    setLocalStorage(dataUsers); 
+});
+
+
+function validatePasswords(password, password_2) {
+    return password === password_2;
+}
+
+
+function sendDataToAPI(data) {
+    fetch('https://65261c4e67cfb1e59ce7e741.mockapi.io/users', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Success:', data);
+        window.location.href = 'https://google.com';
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
