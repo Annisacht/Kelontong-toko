@@ -41,8 +41,8 @@ function sendDataToAPI(data) {
     })
     .then(response => response.json())
     .then(data => {
-        alert('Success:', data);
-        window.location.href = 'https://google.com';
+        alert('Success: Data berhasil di registrasi akan di redirect ke Login', data);
+        window.location.href = 'login.html';
     })
     .catch((error) => {
         console.error('Error:', error);
