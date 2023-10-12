@@ -22,7 +22,7 @@
             <div class="mb-5 checkout__address">
                 <div class="d-flex align-items-center column-gap-2 mb-4 checkout_title">
                     <a href="#">
-                        <img class="img-fluid left__arrow" src="../assets/img/arrow-left.svg" alt="" />
+                        <img class="img-fluid left__arrow me-3" src="../assets/img/arrow-left.svg" alt="" />
                     </a>
                     <h4 class="fw-bold">Checkout</h4>
                 </div>
@@ -61,7 +61,7 @@
                                         Jenis barang: 5 kg <b>1 Barang</b>
                                     </p>
                                     <p class="card-text">
-                                    <h3 class="fw-bold">Rp 69.500</h3>
+                                    <h3 class="fw-bold">Rp <span id="price-product">55000</span></h3>
                                     </p>
                                 </div>
                             </div>
@@ -75,13 +75,13 @@
                             <div class="col-md-10">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        Beras Hoki 5 kg / 10 kg / 15 kg / 25 kg
+                                        Minyak Goreng
                                     </h5>
                                     <p class="card-text">
                                         Jenis barang: 5 kg <b>1 Barang</b>
                                     </p>
                                     <p class="card-text">
-                                    <h3 class="fw-bold">Rp 69.500</h3>
+                                    <h3 class="fw-bold">Rp <span id="price-product">39000</span></h3>
                                     </p>
                                 </div>
                             </div>
@@ -95,13 +95,13 @@
                             <div class="col-md-10">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        Beras Hoki 5 kg / 10 kg / 15 kg / 25 kg
+                                        Gulaku
                                     </h5>
                                     <p class="card-text">
                                         Jenis barang: 5 kg <b>1 Barang</b>
                                     </p>
                                     <p class="card-text">
-                                    <h3 class="fw-bold">Rp 69.500</h3>
+                                    <h3 class="fw-bold">Rp <span id="price-product">24000</span></h3>
                                     </p>
                                 </div>
                             </div>
@@ -115,13 +115,13 @@
                             <div class="col-md-10">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        Beras Hoki 5 kg / 10 kg / 15 kg / 25 kg
+                                        Harmony
                                     </h5>
                                     <p class="card-text">
                                         Jenis barang: 5 kg <b>1 Barang</b>
                                     </p>
                                     <p class="card-text">
-                                    <h3 class="fw-bold">Rp 69.500</h3>
+                                    <h3 class="fw-bold">Rp <span id="price-product">3000</span></h3>
                                     </p>
                                 </div>
                             </div>
@@ -135,13 +135,13 @@
                             <div class="col-md-10">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        Beras Hoki 5 kg / 10 kg / 15 kg / 25 kg
+                                        Daia
                                     </h5>
                                     <p class="card-text">
                                         Jenis barang: 5 kg <b>1 Barang</b>
                                     </p>
                                     <p class="card-text">
-                                    <h3 class="fw-bold">Rp 69.500</h3>
+                                    <h3 class="fw-bold">Rp <span id="price-product">13000</span></h3>
                                     </p>
                                 </div>
                             </div>
@@ -153,19 +153,16 @@
                         <h5 class="fw-semibold ms-3">
                             Pilih Pengiriman
                         </h5>
-                        <!-- Example single danger button -->
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Durasi Pengiriman
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btn-send">
+                              Durasi Pengiriman
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Durasi 1</a></li>
-                                <li><a class="dropdown-item" href="#">Durasi 2</a></li>
-                                <li><a class="dropdown-item" href="#">Durasi 3</a></li>
-                                <li><a class="dropdown-item" href="#">Durasi 4</a></li>
+                              <li><button class="dropdown-item" type="button">Durasi 1</button></li>
+                              <li><button class="dropdown-item" type="button">Durasi 2</button></li>
+                              <li><button class="dropdown-item" type="button">Durasi 3</button></li>
                             </ul>
-                        </div>
+                          </div>
                     </div>
                     <div class="line mb-4"></div>
                     <div class="d-flex justify-content-between mb-4 result__total">
@@ -173,7 +170,7 @@
                             Total
                         </h5>
                         <h5 class="fw-semibold">
-                            Rp.282.500
+                            <span id="price-from-product"></span>
                         </h5>
                     </div>
                     <div class="line-2 mb-4"></div>
@@ -186,11 +183,14 @@
                                 Total
                             </h5>
                             <h5 class="fw-semibold">
-                                Rp.282.500
+                                <span id="price-from-product"></span>
                             </h5>
                         </div>
+                        <div class="d-flex justify-content-between" id="cost-price">
+                        </div>
                     </div>
-                    <div class="line mb-5"></div>
+                    <div class="line mb-3"></div>
+                    <div class="d-flex justify-content-end py-3 fs-1 fw-bolder" id="total">-</div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn btn-primary" type="button">Pilih Pembayaran</button>
                       </div>
