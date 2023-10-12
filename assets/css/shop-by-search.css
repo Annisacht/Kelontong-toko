@@ -21,24 +21,19 @@
 .category-text h1,
 .suggest-text h1{
     color: black;
-    font-size: 32px;
-    font-weight: 900;
+    font-size: 24px;
+    font-weight: 800;
 }
 
 .category-text a,
 .suggest-text a{
     color:#0376CB;
-    font-size: 18px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 800;
 }
 
 .category-card,
 .suggest-card{
-    overflow-x: auto;
-    max-width: 100%
-}
-
-.row{
     overflow-x: auto;
     max-width: 100%
 }
