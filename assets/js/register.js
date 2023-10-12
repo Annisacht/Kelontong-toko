@@ -15,6 +15,16 @@ let btnSubmit = document.getElementById('button_submit').addEventListener('click
         return; 
     }
 
+    if (!validateEmail(email)) {
+        alert("Email tidak valid!");
+        return;
+    }
+
+    if (nama  == "" || email == "" || password == "" || password_2 == "") {
+        alert('ga boleh kosong');
+        return
+    }
+
     let dataUsers = {
         nama: nama,
         email: email,
@@ -28,6 +38,11 @@ let btnSubmit = document.getElementById('button_submit').addEventListener('click
 
 function validatePasswords(password, password_2) {
     return password === password_2;
+}
+
+function validateEmail(email) {
+    let validRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return validRegex.test(email);
 }
 
 
