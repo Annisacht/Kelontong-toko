@@ -1,4 +1,5 @@
 // Calculate the total cost
+const totalElement = document.getElementById("total");
 
 // Initialize the initial total to 0
 let initialTotal = 0;
@@ -10,6 +11,7 @@ window.addEventListener("load", () => {
     // Sum the product prices from each element
     initialTotal += parseInt(element.textContent);
   });
+  totalElement.textContent = formatNumber(initialTotal);
 
   // Get all elements with the ID "price-from-product"
   const displayCost = document.querySelectorAll("#price-from-product");
@@ -19,8 +21,6 @@ window.addEventListener("load", () => {
   });
 });
 
-const durationDropdown = document.querySelector(".dropdown");
-const totalElement = document.getElementById("total");
 let selectedDuration = null;
 
 // Store delivery prices for each duration
@@ -60,12 +60,13 @@ function updateSelectedCost() {
 }
 
 // Handle the change of selected delivery duration
-durationDropdown.addEventListener("click", function (e) {
+document.querySelector(".dropdown").addEventListener("click", function (e) {
   if (e.target.classList.contains("dropdown-item")) {
     selectedDuration = e.target.textContent;
     updateSelectedCost();
     updateCostPrice();
     updateTotalPrice();
+    document.querySelector("#choose-payment").classList.remove("disabled");
   }
 });
 
@@ -79,6 +80,3 @@ function formatNumber(number) {
   });
   return formattedNumber;
 }
-
-// Display the initial total with formatting
-totalElement.textContent = "Rp." + initialTotal;
