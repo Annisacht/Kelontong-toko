@@ -32,7 +32,13 @@
     font-weight: 900;
 }
 
-.category-card{
+.category-card,
+.suggest-card{
+    overflow-x: auto;
+    max-width: 100%
+}
+
+.row{
     overflow-x: auto;
     max-width: 100%
 }
