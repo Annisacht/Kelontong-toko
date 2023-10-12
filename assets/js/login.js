@@ -1,7 +1,7 @@
 // dapatkan id btn dan input didalamnya
 // ambil data api
 // ketika data api sudah didaptkan email dan password field di api bandingkan dengan yang di inputkan user dan buat validasi sebagai unique field gunakan email
-// set cookie
+// set cookie untuk mendapatkan nama, id, dan email users
 let usersData = [];
 
 async function getData ()
@@ -29,17 +29,15 @@ let BtnSubmit = document.getElementById('btn_submit').addEventListener('click', 
     event.preventDefault()
 
     let elementEmail = document.getElementById('email').value;
-    console.log(elementEmail);
     let elementPassword = document.getElementById('password').value;
-    console.log(elementPassword);
 
     let userisTrue = usersData.find(user => user.email === elementEmail && user.password === elementPassword);
 
     if (userisTrue) {
         alert('Login berhasil!');
-        setCookie("userEmail", elementEmail, 7);
-        setCookie("userID", userisTrue.id, 7); 
-        setCookie("userNAMA", userisTrue.nama, 7); 
+        setCookie("Email", elementEmail, 7);
+        setCookie("ID", userisTrue.id, 7); 
+        setCookie("Nama", userisTrue.nama, 7); 
         window.location.href = '../index.html';
     } else {
         alert('Email atau password salah.');
