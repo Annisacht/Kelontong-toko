@@ -1,73 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/plugins/bootstrap-5.3.2/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/bootstrap-5.3.2/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="../assets/css/login.css" />
     <title>Login</title>
-</head>
+  </head>
 
-<body>
-    <section class="section align-items-center">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <a href="../index.html">
-                        <h1 class="text-primary fw-bold text-decoration-none pt-5">
-                            Kelontong
-                        </h1>
-                    </a>
-                </div>
-            </div>
+  <body>
+    <div class="container vh-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-lg-4 col-sm-12 col-md-12">
+        <section class="section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="text-primary fw-bold text-decoration-none pt-5">
+              <a href="../index.html"> Kelontong</a>
+            </h1>
+          </div>
         </div>
+      </div>
 
+      <div class="container">
+        <div class="row pb-2 ps-1 text-center">
+          <div class="col">
+            <a href="" class="text-primary active">Customer</a>
+            <a href="" class="text-black">Owner</a>
+          </div>
+        </div>
+      </div>
+      <form action="">
         <div class="container">
-            <div class="row pb-2 ps-1">
-                <div class="col">
-                    <a href="" class="text-primary active">Customer</a>
-                    <a href="" class="text-black">Owner</a>
+          <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Your Password"
+                  minlength="8"
+                  maxlength="8"
+                  required
+                />
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-check pb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                        checked
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Remember Me
+                      </label>
+                      <a class="float-end" href="forgot-password.html"
+                        >Lupa Password?</a
+                      >
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn_submit">
+                Masuk
+              </button>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row pt-3">
+              <div class="col-12 text-center">
+                <p>Belum punya akun?<a href="register.html">Daftar</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
             </div>
         </div>
-        <form action="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="name@example.com"
-                                required/>
-                        </div>
-                        <div class="mb-3">
-                            <input type="password" class="form-control" id="password" placeholder="Your Password"
-                                minlength="8" maxlength="8" required />
-                        </div>
-                        <div class="form-check pb-2">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Remember Me
-                            </label>
-                            <a href="forgot-password.html">Lupa Password?</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="btn_submit">
-                            Masuk
-                        </button>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row pt-3">
-                        <div class="col-12 text-center">
-                            <p>Belum punya akun?<a href="register.html">Daftar</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </section>
+    </div>
+    
 
     <script src="../assets/js/login.js"></script>
     <script src="../assets/plugins/bootstrap-5.3.2/dist/js/bootstrap.min.js"></script>
-</body>
-
+  </body>
 </html>
