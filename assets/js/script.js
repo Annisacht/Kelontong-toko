@@ -39,7 +39,9 @@ function filterProduct() {
                         <img src="assets/img/${product.image}" class="card-img-top" alt="${product.name}">
                         <div class="card-body">
                           <h5 class="card-title">${product.name}</h5>
+                          <p class="card-text">${product.category}</p>
                           <p class="card-text">${product.desc}</p>
+                          <p class="card-text">Rp. ${product.price}</p>
                           <p class="card-text">Stok:${product.stock}</p>
                           <a href="product-detail.html?product_id=${product.id}" class="btn btn-primary product-detail-btn">Detail</a>
                         </div>
