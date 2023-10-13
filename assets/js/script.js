@@ -14,6 +14,8 @@ function getCookie(name) {
 }
 
 function filterProduct() {
+    const loadingModal = document.getElementById('loadingModal');
+  loadingModal.style.display = 'block';
     const url = 'https://652760d5917d673fd76d9d06.mockapi.io/api/v1/product-list-kelontong/product';
 
     fetch(url, {
@@ -66,6 +68,8 @@ document.querySelectorAll('.product-detail-btn').forEach(button => {
 });
     }).catch(error => {
         console.log(error);
+    }).finally(() => {
+        loadingModal.style.display = 'none';
     });
 }
 
