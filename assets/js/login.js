@@ -38,7 +38,7 @@ let BtnSubmit = document.getElementById('btn_submit').addEventListener('click', 
         setCookie("Email", elementEmail, 7);
         setCookie("ID", userisTrue.id, 7); 
         setCookie("Nama", userisTrue.nama, 7); 
-        window.location.href = '../index.html';
+        window.location.href = 'shop-by-search.html';
     } else {
         alert('Email atau password salah.');
     }
