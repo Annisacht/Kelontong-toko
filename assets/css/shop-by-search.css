@@ -17,7 +17,11 @@
     font-weight: 600;
 }
 
-/* category */
+/* card category*/
+.carousel-item{
+    margin: 10px;
+}
+
 .category-text h1,
 .suggest-text h1{
     color: black;
@@ -36,4 +40,26 @@
 .suggest-card{
     overflow-x: auto;
     max-width: 100%
+}
+
+/* suggest */
+.card-body p{
+    margin-bottom: 8px;
+}
+
+/* footer */
+footer a h1{
+    color: #0376CB;
+    font-weight: 900;
+    font-size: 48px;  
+}
+
+footer h2  {
+    color:#000;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.nav-link{
+    font-size: 14px;
 }
