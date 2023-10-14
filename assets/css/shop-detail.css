@@ -8,5 +8,49 @@
 .navbar-brand{
     color: #0376CB;
     font-weight: 900;
-    font-size: 48px;
+}
+
+.profile{
+    text-align: center;
+    list-style: none;
+}
+
+/* category */
+.col h2{
+    color:#000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.col h5{
+    font-size: 12px;
+}
+
+.btn-category{
+    list-style-type: none;
+}
+
+
+/* products detail */
+
+
+/* footer */
+footer a h1{
+    color: #0376CB;
+    font-weight: 900;
+    font-size: 48px;  
+}
+
+footer p {
+    font-size: 16px; 
+}
+
+footer h2  {
+    color:#000;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.nav-link{
+    font-size: 14px;
 }
