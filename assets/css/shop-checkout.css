@@ -51,6 +51,12 @@ h6 {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
+.hidden-y-scroll {
+  overflow-y: hidden !important;
+}
 
 /* ! Navbar */
 .nav__logo {
@@ -82,6 +88,9 @@ h6 {
   height: 10px;
   background: #d4d2d2;
   margin: 16px 0;
+}
+.line-3 {
+  border-top: 3px dotted black;
 }
 
 /* !Checkout Products */

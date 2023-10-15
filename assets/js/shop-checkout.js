@@ -36,6 +36,9 @@ function updateTotalPrice() {
     const deliveryPrice = deliveryPrices[selectedDuration];
     const totalPrice = initialTotal + deliveryPrice;
     totalElement.textContent = formatNumber(totalPrice);
+    document.querySelectorAll(".midtrans__total").forEach((item) => {
+      item.textContent = formatNumber(totalPrice);
+    });
   }
 }
 
@@ -66,7 +69,7 @@ document.querySelector(".dropdown").addEventListener("click", function (e) {
     updateSelectedCost();
     updateCostPrice();
     updateTotalPrice();
-    document.querySelector("#choose-payment").classList.remove("disabled");
+    document.querySelector("#pay-button").classList.remove("disabled");
   }
 });
 
@@ -79,4 +82,44 @@ function formatNumber(number) {
     maximumFractionDigits: 0,
   });
   return formattedNumber;
+}
+
+// Midtrans
+// Event when click payment method
+document.querySelectorAll(".payment__item").forEach((payment) => {
+  payment.addEventListener("click", showBarcode);
+});
+
+// function to show barcode
+function showBarcode() {
+  document.querySelector("#payments").classList.add("d-none");
+  document.querySelector("#barcode").classList.remove("d-none");
+  document.querySelector("#midtrans-footer").classList.add("d-none");
+}
+
+// event to see how to pay
+document.querySelector("#how-to").addEventListener("click", showHowToContent);
+function showHowToContent() {
+  document.querySelector("#how-to-content").classList.toggle("d-none");
+}
+
+// Event when pay
+document.querySelector("#qr-image").addEventListener("click", showSuccess);
+function showSuccess() {
+  let time = 3;
+  document.querySelector("#time-left").innerHTML = time;
+  const intervalId = setInterval(() => {
+    time--;
+    document.querySelector("#time-left").innerHTML = time;
+
+    if (time === 0) {
+      clearInterval(intervalId);
+      window.location.href = "pay-success-page.html";
+    }
+  }, 1000);
+
+  document.querySelectorAll(".modal-items").forEach((item) => {
+    item.classList.add("d-none");
+    document.querySelector("#success-midtrans").classList.remove("d-none");
+  });
 }
