@@ -12,13 +12,16 @@ function getData() {
             completedata = completedata.slice(0, 20);
             completedata.map((item) => {
                 item1 += `<div class="card-body col-md-2 col-sm-2 text-align-center p-3 border border-2 border-info rounded ">
+                <a href="shop-detail-2.html?id=${item.id}">
             <img src="${item.img}" alt="">
             <h5 class="card-title">${item.name}</h5>
             <p class="card-text">${item.price}</p>
-        </div>`
+            </a>
+        </div>
+        `
             });
             document.getElementById("cardContainer").innerHTML = item1;
-            callProducts()
+            // callProducts()
         }) 
         .catch((err) => {
             console.log(err);
