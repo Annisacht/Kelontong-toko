@@ -65,6 +65,15 @@ async function getDataCheckout() {
 
         document.querySelector("#shipping-content").innerHTML += dataShipping;
       });
+
+      //   Get data total before shipping
+      let subTotal = 0;
+      products.map((product) => {
+        subTotal += product.quantity * product.price;
+      });
+
+      document.querySelector("#price-from-product").innerHTML =
+        formatNumber(subTotal);
     });
   } catch (error) {
     console.error("Error when geting data: " + error);
