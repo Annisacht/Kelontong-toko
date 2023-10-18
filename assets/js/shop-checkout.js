@@ -88,7 +88,11 @@ async function getDataCheckout() {
           }
         });
 
-
+      // Function to update the selected cost duration
+      function updateSelectedCost() {
+        const btnCost = document.querySelector("#btn-send");
+        btnCost.textContent = selectedDuration;
+      }
     });
   } catch (error) {
     console.error("Error when geting data: " + error);
@@ -131,12 +135,6 @@ function updateCostPrice() {
     ${formatNumber(deliveryPrice)}
 </h5>
     `;
-}
-
-// Function to update the selected cost duration
-function updateSelectedCost() {
-  const btnCost = document.querySelector("#btn-send");
-  btnCost.textContent = selectedDuration;
 }
 
 // Function to format a number into Indonesian Rupiah currency format
