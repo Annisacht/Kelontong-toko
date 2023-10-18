@@ -1,3 +1,24 @@
+getDataCheckout();
+
+async function getDataCheckout() {
+  try {
+    const url = "https://65276f59917d673fd76db11a.mockapi.io/api/v1/checkout";
+
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const datas = await response.json();
+
+    datas.map((data) => {
+        console.log(data)
+    })
+  } catch (error) {
+    console.error("Error when geting data: " + error);
+  }
+}
+
 // Calculate the total cost
 const totalElement = document.getElementById("total");
 
