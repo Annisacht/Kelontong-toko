@@ -72,8 +72,11 @@ async function getDataCheckout() {
         subTotal += product.quantity * product.price;
       });
 
-      document.querySelector("#price-from-product").innerHTML =
-        formatNumber(subTotal);
+      const totals = document.querySelectorAll(".price-from-product")
+
+      totals.forEach((total) => {
+        total.innerHTML = formatNumber(subTotal);
+      })
 
       // Handle the change of selected delivery duration
       document
@@ -93,6 +96,27 @@ async function getDataCheckout() {
         const btnCost = document.querySelector("#btn-send");
         btnCost.textContent = selectedDuration;
       }
+
+      // Store delivery prices for each duration
+      const deliveryPrices = {
+        "Standard Shipping": 10000,
+        "Fast Shipping": 15000,
+        "Express Shipping": 20000,
+      };
+
+      // Function to update the cost price
+      function updateCostPrice() {
+        const price = document.querySelector("#cost-price");
+        const deliveryPrice = deliveryPrices[selectedDuration];
+        price.innerHTML = `
+      <h5 class="fw-semibold ms-3">
+      Ongkos Kirim
+  </h5>
+  <h5 class="fw-semibold">
+      ${formatNumber(deliveryPrice)}
+  </h5>
+      `;
+      }
     });
   } catch (error) {
     console.error("Error when geting data: " + error);
@@ -104,13 +128,6 @@ const totalElement = document.getElementById("total");
 
 let selectedDuration = null;
 
-// Store delivery prices for each duration
-const deliveryPrices = {
-  "Durasi 1": 10000,
-  "Durasi 2": 15000,
-  "Durasi 3": 20000,
-};
-
 // Function to update the total price
 function updateTotalPrice() {
   if (selectedDuration) {
@@ -121,20 +138,6 @@ function updateTotalPrice() {
       item.textContent = formatNumber(totalPrice);
     });
   }
-}
-
-// Function to update the cost price
-function updateCostPrice() {
-  const price = document.querySelector("#cost-price");
-  const deliveryPrice = deliveryPrices[selectedDuration];
-  price.innerHTML = `
-    <h5 class="fw-semibold ms-3">
-    Ongkos Kirim
-</h5>
-<h5 class="fw-semibold">
-    ${formatNumber(deliveryPrice)}
-</h5>
-    `;
 }
 
 // Function to format a number into Indonesian Rupiah currency format
