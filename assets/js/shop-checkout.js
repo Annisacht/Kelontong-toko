@@ -72,11 +72,11 @@ async function getDataCheckout() {
         subTotal += product.quantity * product.price;
       });
 
-      const totals = document.querySelectorAll(".price-from-product")
+      const totals = document.querySelectorAll(".price-from-product");
 
       totals.forEach((total) => {
         total.innerHTML = formatNumber(subTotal);
-      })
+      });
 
       // Handle the change of selected delivery duration
       document
@@ -117,6 +117,18 @@ async function getDataCheckout() {
   </h5>
       `;
       }
+
+      // Function to update the total price
+      function updateTotalPrice() {
+        if (selectedDuration) {
+          const deliveryPrice = deliveryPrices[selectedDuration];
+          const totalPrice = subTotal + deliveryPrice;
+          totalElement.textContent = formatNumber(totalPrice);
+          document.querySelectorAll(".midtrans__total").forEach((item) => {
+            item.textContent = formatNumber(totalPrice);
+          });
+        }
+      }
     });
   } catch (error) {
     console.error("Error when geting data: " + error);
@@ -127,18 +139,6 @@ async function getDataCheckout() {
 const totalElement = document.getElementById("total");
 
 let selectedDuration = null;
-
-// Function to update the total price
-function updateTotalPrice() {
-  if (selectedDuration) {
-    const deliveryPrice = deliveryPrices[selectedDuration];
-    const totalPrice = initialTotal + deliveryPrice;
-    totalElement.textContent = formatNumber(totalPrice);
-    document.querySelectorAll(".midtrans__total").forEach((item) => {
-      item.textContent = formatNumber(totalPrice);
-    });
-  }
-}
 
 // Function to format a number into Indonesian Rupiah currency format
 function formatNumber(number) {
