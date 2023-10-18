@@ -12,8 +12,16 @@ async function getDataCheckout() {
     const datas = await response.json();
 
     datas.map((data) => {
-        console.log(data)
-    })
+        let dataUser = `
+        <h5 class="fw-bolder mb-2">${data.customer.name}</h5>
+        <h5 class="mb-2">${data.customer.phone_number}</h5>
+        <h6 class="fw-light">
+        ${data.customer.address}
+        </h6>
+
+        `;
+        document.querySelector('#address-content').innerHTML = dataUser
+    });
   } catch (error) {
     console.error("Error when geting data: " + error);
   }
