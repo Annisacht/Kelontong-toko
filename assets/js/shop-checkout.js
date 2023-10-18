@@ -74,6 +74,21 @@ async function getDataCheckout() {
 
       document.querySelector("#price-from-product").innerHTML =
         formatNumber(subTotal);
+
+      // Handle the change of selected delivery duration
+      document
+        .querySelector(".dropdown")
+        .addEventListener("click", function (e) {
+          if (e.target.classList.contains("dropdown-item")) {
+            selectedDuration = e.target.textContent;
+            updateSelectedCost();
+            updateCostPrice();
+            updateTotalPrice();
+            document.querySelector("#pay-button").classList.remove("disabled");
+          }
+        });
+
+
     });
   } catch (error) {
     console.error("Error when geting data: " + error);
@@ -82,26 +97,6 @@ async function getDataCheckout() {
 
 // Calculate the total cost
 const totalElement = document.getElementById("total");
-
-// Initialize the initial total to 0
-let initialTotal = 0;
-
-// Run the code after the web page is fully loaded
-window.addEventListener("load", () => {
-  const priceProduct = document.querySelectorAll("#price-product");
-  priceProduct.forEach((element) => {
-    // Sum the product prices from each element
-    initialTotal += parseInt(element.textContent);
-  });
-  totalElement.textContent = formatNumber(initialTotal);
-
-  // Get all elements with the ID "price-from-product"
-  const displayCost = document.querySelectorAll("#price-from-product");
-  displayCost.forEach((element) => {
-    // Display the total price with formatting
-    element.innerHTML = formatNumber(initialTotal);
-  });
-});
 
 let selectedDuration = null;
 
@@ -143,17 +138,6 @@ function updateSelectedCost() {
   const btnCost = document.querySelector("#btn-send");
   btnCost.textContent = selectedDuration;
 }
-
-// Handle the change of selected delivery duration
-document.querySelector(".dropdown").addEventListener("click", function (e) {
-  if (e.target.classList.contains("dropdown-item")) {
-    selectedDuration = e.target.textContent;
-    updateSelectedCost();
-    updateCostPrice();
-    updateTotalPrice();
-    document.querySelector("#pay-button").classList.remove("disabled");
-  }
-});
 
 // Function to format a number into Indonesian Rupiah currency format
 function formatNumber(number) {
