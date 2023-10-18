@@ -12,7 +12,8 @@ async function getDataCheckout() {
     const datas = await response.json();
 
     datas.map((data) => {
-        let dataUser = `
+      // Get data user from api
+      let dataUser = `
         <h5 class="fw-bolder mb-2">${data.customer.name}</h5>
         <h5 class="mb-2">${data.customer.phone_number}</h5>
         <h6 class="fw-light">
@@ -20,7 +21,36 @@ async function getDataCheckout() {
         </h6>
 
         `;
-        document.querySelector('#address-content').innerHTML = dataUser
+      document.querySelector("#address-content").innerHTML = dataUser;
+
+      // Get products
+      let products = data.cart.items;
+      products.map((product) => {
+        let dataProducts = `
+        <div class="card mb-3 product__card">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img src="${product.image}" class="img-fluid rounded-start" alt="..." />
+            </div>
+            <div class="col-md-10">
+                <div class="card-body">
+                    <h5 class="card-title">
+                    ${product.product_name}
+                    </h5>
+                    <p class="card-text">
+                        Jumlah barang: <b>${product.quantity} Barang</b>
+                    </p>
+                    <p class="card-text">
+                    <h3 class="fw-bold"><span id="price-product">${formatNumber(product.price)}</span></h3>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+        `;
+
+        document.querySelector("#product-content").innerHTML += dataProducts;
+      });
     });
   } catch (error) {
     console.error("Error when geting data: " + error);
