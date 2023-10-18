@@ -30,7 +30,9 @@ async function getDataCheckout() {
         <div class="card mb-3 product__card">
         <div class="row g-0">
             <div class="col-md-2">
-                <img src="${product.image}" class="img-fluid rounded-start" alt="..." />
+                <img src="${
+                  product.image
+                }" class="img-fluid rounded-start" alt="..." />
             </div>
             <div class="col-md-10">
                 <div class="card-body">
@@ -41,7 +43,9 @@ async function getDataCheckout() {
                         Jumlah barang: <b>${product.quantity} Barang</b>
                     </p>
                     <p class="card-text">
-                    <h3 class="fw-bold"><span id="price-product">${formatNumber(product.price)}</span></h3>
+                    <h3 class="fw-bold"><span id="price-product">${formatNumber(
+                      product.price
+                    )}</span></h3>
                     </p>
                 </div>
             </div>
@@ -50,6 +54,16 @@ async function getDataCheckout() {
         `;
 
         document.querySelector("#product-content").innerHTML += dataProducts;
+      });
+
+      //Get shipping
+      let shippings = data.shipping;
+      shippings.map((shipping) => {
+        let dataShipping = `
+        <li><button class="dropdown-item" type="button">${shipping.method}</button></li>
+        `;
+
+        document.querySelector("#shipping-content").innerHTML += dataShipping;
       });
     });
   } catch (error) {
