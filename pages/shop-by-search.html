@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelontong</title>
+    <link rel="stylesheet" href="../assets/plugins/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/shop-by-search.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <header class="header">
+        <div class="col">
+            <nav class="container-fluid pt-3 pb-3 ps-5 pe-5">
+                <div class="navbar navbar-expand-lg col-12 align">
+                    <div class="row w-100 d-flex align-items-center">
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <a class="navbar-brand" href="#">Kelontong</a>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                            <div class="search-group d-flex justify-content-end">
+                                <a class="btn btn-primary d-flex align-items-center" href="shop-detail.html">produk</a>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="cart.html">
+                                            <img src="../assets/img/fluent_cart-24-regular.png" width="30" height="30"
+                                                alt="Cart">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-12 mt-3 me-0">
+                            <div class="profile">
+                                <a href="#" id="profile"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </nav>
+        </div>
+    </header>
+
+    <section class="hero section">
+        <div class="container p-10">
+            <div id="carouselControls" class="carousel-banner" data-bs-ride="carousel">
+                <div class="banner carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../assets/img/banner.png" class="d-block w-100 rounded" alt="banner">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/img/sembako.jpg" class="d-block w-100 rounded" alt="sembako">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/img/lampu banner.jpg" class="d-block w-100 rounded" alt="elektronik banner">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="category section">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="category-text">
+                        <div class="d-flex flex-row bd-highlight justify-content-between pt-3 ps-5 pe-5">
+                            <div class="p-2 bd-highlight">
+                                <h1>Kategori pilihan</h1>
+                            </div>
+                            <div class="p-2 bd-highlight"><a href="#">lihat semua</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="carouselExampleControls" class="carousel carousel-dark slide border-top"
+                    data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="row mt-5 mb-5">
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../assets/img/alat-mandi.png" class="card-img-top" alt="alat mandi">
+                                    <div class="card-body">
+                                        <h5 class="card-title">alat mandi</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../assets/img/alat-tulis.png" class="card-img-top" alt="alat tulis">
+                                    <div class="card-body">
+                                        <h5 class="card-title">alat tulis</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-4 ">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../assets/img/bahan-pokok.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bahan pokok</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-4 ">
+                                    <div class="card" style="width: 10rem;">
+                                        <img src="../assets/img/pembersih.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Pembersih</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-4 ">
+                                    <div class="card" style="width: 10rem;">
+                                        <img src="../assets/img/Rectangle 18.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">elektronik</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="suggest">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="suggest-text">
+                        <div class="d-flex flex-row bd-highlight justify-content-between  pt-3 ps-5 pe-5">
+                            <div class="p-2 bd-highlight">
+                                <h1>Barang pilihan untuk Azis</h1>
+                            </div>
+                            <div class="p-2 bd-highlight"><a href="#">lihat semua</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="carouselExampleControls" class="carousel carousel-dark slide border-top"
+                    data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- <div class="carousel-item active"> -->
+                        <div class="row mt-5">
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../assets/img/alat-mandi.png" class="card-img-top" alt="alat mandi">
+                                    <div class="card-body mb-0">
+                                        <h5 class="card-title">alat mandi</h5>
+                                        <p>Rp 10.000</p>
+                                        <p class="rating">4.5</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../assets/img/alat-tulis.png" class="card-img-top" alt="alat tulis">
+                                    <div class="card-body mb-0">
+                                        <h5 class="card-title">alat tulis</h5>
+                                        <p>Rp. 5.000</p>
+                                        <p class="rating">4.5</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../assets/img/bahan-pokok.png" class="card-img-top" alt="...">
+                                    <div class="card-body mb-0">
+                                        <h5 class="card-title">Bahan pokok</h5>
+                                        <p>Rp 10.000</p>
+                                        <p class="rating">4.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../assets/img/pembersih.png" class="card-img-top" alt="...">
+                                    <div class="card-body mb-0">
+                                        <h5 class="card-title">Pembersih</h5>
+                                        <p>Rp 15.000</p>
+                                        <p class="rating">4.5</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-4">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../assets/img/Rectangle 18.png" class="card-img-top" alt="...">
+                                    <div class="card-body mb-0">
+                                        <h5 class="card-title">elektronik</h5>
+                                        <p>Rp. 25.000</p>
+                                        <p class="rating">4.5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 p-5 m-5 border-top">
+        <div class="col mb-3">
+            <a href="/" class="d-flex align-items-center m-3 link-dark text-decoration-none">
+                <H1>Kelontong</H1>
+            </a>
+            <p class="text-muted">All Rights Reserved</p>
+            <p class="text-muted">© 2022</p>
+        </div>
+
+        <div class="col mb-3">
+        </div>
+
+        <div class="col mb-2">
+            <h2>Tentang</h2>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Kelontong</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Blog</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mitra Blog</a></li>
+            </ul>
+        </div>
+
+        <div class="col mb-2">
+            <h2>Jual Beli</h2>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Edukasi Seller</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Kelontong COD</a></li>
+        </div>
+
+        <div class="col mb-2">
+            <h2>Bantuan & Panduan</h2>
+            <ul class="nav flex-column">
+
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Costumer Care</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Syarat & Ketentuan</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Kebijakan Privasi</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="../assets/plugins/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/shop-by-search.js"></script>
+</body>
+
+</html>
