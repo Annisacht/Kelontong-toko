@@ -22,10 +22,10 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
                             <div class="search-group d-flex">
-                                <input type="text" class="form-control" placeholder="search" aria-label="search">
+                                <input id="searchInput" type="text" class="form-control" placeholder="search" aria-label="search">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                        <a class="nav-link" href="cart.html">
                                             <img src="../assets/img/fluent_cart-24-regular.png" width="30" height="30"
                                                 alt="Cart">
                                         </a>
@@ -35,8 +35,8 @@
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-12 mt-3 me-0">
-                            <div class="profile fw-normal fs-6 text">
-                                <a href="#" id="profile">Hello, Azis!</a>
+                            <div class="profile">
+                                <a href="#" id="profile"></a>
                             </div>
                         </div>
                     </div>
@@ -46,27 +46,17 @@
         </div>
     </header>
 
-    <!-- breadcrumb category -->
-    <div class="container breadcrumb">
-        <div class="row">
-            <div class="col mt-5">
-                <h2>Menampilkan Hasil dari "Beras putih"</H2>
-                <nav aria-label="breadcrumb">
-                    <ol class="btn-category breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Makanan & Minuman</a></li>
-                        <li class="breadcrumb-item"><a href="#">Bahan Pokok</a></li>
-                        <li class="breadcrumb-item"><a href="#">Beras putih</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Beras hoki</li>
-                    </ol>
-                </nav>
-                <h5 class="text-muted">100 hasil dari "Beras Putih"</h5 </div>
-            </div>
-        </div>
-
         <!-- card -->
         <div class="product-card container">
             <div class="row gap-3" id="cardContainer">
                 <a href="shop-detail-2.html">klik dimari</a>
+            </div>
+        </div>
+
+        <div class="pagination container p-3 d-flex justify-content-center ">
+            <div id="cardContainer" class="row">
+                <ul id="pagination" class="pagination justify-content-center"></ul>
+                </ul>
             </div>
         </div>
 
