@@ -62,10 +62,18 @@ document.querySelectorAll('.product-detail-btn').forEach(button => {
         if (!getCookie('userLoggedIn')) {
             window.location.href = 'pages/login.html';
         } else {
-            window.location.href = event.target.href;
+            window.location.href = 'pages/product-detail.html';
         }
     });
 });
+document.getElementById('cart').addEventListener('click', function(event) {
+    event.preventDefault();
+        if (!getCookie('userLoggedIn')) {
+            window.location.href = 'pages/login.html';
+        } else {
+            window.location.href = 'pages/shop-by-search.html';
+        }
+})
     }).catch(error => {
         console.log(error);
     }).finally(() => {
