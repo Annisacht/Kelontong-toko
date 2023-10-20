@@ -1,0 +1,16 @@
+body {
+  font-family: "Inter", serif;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+.nav__img {
+  width: 20px;
+}
+.done__img {
+  width: 150px;
+}
+.success {
+  height: 80vh;
+}

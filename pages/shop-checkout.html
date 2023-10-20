@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/shop-checkout.css" />
+    <link rel="stylesheet" href="../assets/css/midtrans.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="container py-4 nav__bar mb-4">
+        <div class="nav__logo fw-bold">Kelontong</div>
+    </nav>
+
+    <!-- Address -->
+    <main class="container">
+        <section class="checkout">
+            <div class="mb-5 checkout__address">
+                <div class="d-flex align-items-center column-gap-2 mb-4 checkout_title">
+                    <a href="#">
+                        <img class="img-fluid left__arrow me-3" src="../assets/img/arrow-left.svg" alt="" />
+                    </a>
+                    <h4 class="fw-bold">Checkout</h4>
+                </div>
+                <h5 class="fw-semibold position-relative title_address mb-5">
+                    Alamat Pengiriman
+                </h5>
+                <div id="address-content">
+                </div>
+                <div class="line mb-4"></div>
+                <button class="btn btn-outline-primary ms-3 mb-3">
+                    Pilih alamat lain
+                </button>
+                <div class="line-2"></div>
+            </div>
+
+            <div class="checkout__products">
+                <div class="mb-4 checkout__shop">
+                    <img class="shop__img me-2" src="../assets/img/toko.png" alt="" />
+                    Toko Luna
+                </div>
+                <div class="checkout__product mb-5" id="product-content">
+
+                </div>
+                <div class="checkout__result mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4 address__option">
+                        <h5 class="fw-semibold ms-3">
+                            Pilih Pengiriman
+                        </h5>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" id="btn-send">
+                                Durasi Pengiriman
+                            </button>
+                            <ul class="dropdown-menu" id="shipping-content">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="line mb-4"></div>
+                    <div class="d-flex justify-content-between mb-4 result__total">
+                        <h5 class="fw-bold ms-3">
+                            Total
+                        </h5>
+                        <h5 class="fw-semibold">
+                            <span class="price-from-product"></span>
+                        </h5>
+                    </div>
+                    <div class="line-2 mb-4"></div>
+                    <div class="result__summary">
+                        <h5 class="fw-bold ms-3 mb-3">
+                            Ringkasan Belanja
+                        </h5>
+                        <div class="d-flex justify-content-between total__summary">
+                            <h5 class="fw-semibold ms-3">
+                                Total
+                            </h5>
+                            <h5 class="fw-semibold">
+                                <span class="price-from-product"></span>
+                            </h5>
+                        </div>
+                        <div class="d-flex justify-content-between" id="cost-price">
+                        </div>
+                    </div>
+                    <div class="line mb-3"></div>
+                    <div class="d-flex justify-content-end py-3 fs-1 fw-bolder" id="total">-</div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-primary disabled" type="button" id="pay-button" data-bs-toggle="modal"
+                            data-bs-target="#myModal">Pilih
+                            Pembayaran</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Midtrans -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable d-flex justify-content-center">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header py-4 modal-items">
+                            <h5 class="modal-title">Kelontong</h5>
+
+                            <div data-bs-theme="dark">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body modal-items">
+
+                            <!-- Order details -->
+                            <div class="row mb-4 order__details">
+                                <div class="d-flex justify-content-between align-items-center  col-12 ">
+                                    <h5 class="fs-6 fw-bold">Total</h5>
+                                    <h6 class="btn-medium fw-light">Choose within <span
+                                            class="expired-time text-primary">08:08:23</span>
+                                    </h6>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center  col-12 ">
+                                    <h3 class="fs-3 fw-bold midtrans__total"></h3>
+                                    <h6 class="fs-6 text-primary btn__order__details">Order details</h6>
+                                </div>
+                                <div class="d-flex column-gap-1 align-items-center col-12">
+                                    <h6 class="fw-light btn-small mb-0">Order ID #SAMPLE_DEMO_1697250649328</h6>
+                                    <svg class="copy__id" height="16" width="16" fill="currentColor" viewBox="0 0 16 16"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15,0 L5,0 C4.45,0 4,0.45 4,1 L4,3 L6,3 L6,2 L14,2 L14,9 L13,9 L13,11 L15,11 C15.55,11 16,10.55 16,10 L16,1 C16,0.45 15.55,0 15,0 Z M11,4 L1,4 C0.45,4 0,4.45 0,5 L0,15 C0,15.55 0.45,16 1,16 L11,16 C11.55,16 12,15.55 12,15 L12,5 C12,4.45 11.55,4 11,4 Z M10,14 L2,14 L2,6 L10,6 L10,14 Z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Payments -->
+                            <div class="payments" id="payments">
+                                <!-- All Payment title -->
+                                <div class="row mb-3">
+                                    <h5 style="color: rgb(197, 196, 196);">All payment methods</h5>
+                                </div>
+
+                                <!-- All payment content -->
+                                <div class="row py-2 mb-2 border-bottom border-1 cursor-pointer payment__item">
+                                    <div class="col-6 d-flex justify-content-center flex-column
+                                        row-gap-1">
+                                        <h6 class="btn-normal fw-bold">ShopeePay
+                                        </h6>
+                                        <div class="d-flex column-gap-1 py-2">
+                                            <img class="logo-payment-type"
+                                                src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/shopeepay-befa05d168fe30229a3a68f8520595ceee165df888500c15502eb6f6ff26301c.svg"
+                                                alt="ShopeePay" loading="lazy" width="30px" height="20px">
+                                            <img class="logo-payment-type"
+                                                src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/qris-5ab65ea8ea12e00daee664042ed976a75c574fcd2fb1acd04e6cfc773d9bda54.svg"
+                                                alt="QRIS" loading="lazy" width="30px" height="20px">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-end align-items-center">
+                                        <svg height="16" width="16" fill="currentColor" viewBox="0 0 16 16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            style="color: var(--icon-primary,hsla(220, 42%, 24%, 1));">
+                                            <path
+                                                d="M10.71,7.29 L6.71,3.29 C6.53,3.11 6.28,3 6,3 C5.45,3 5,3.45 5,4 C5,4.28 5.11,4.53 5.29,4.71 L8.59,8 L5.3,11.29 C5.11,11.47 5,11.72 5,12 C5,12.55 5.45,13 6,13 C6.28,13 6.53,12.89 6.71,12.71 L10.71,8.71 C10.89,8.53 11,8.28 11,8 C11,7.72 10.89,7.47 10.71,7.29 Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="row py-2 mb-2 border-bottom border-1 cursor-pointer payment__item">
+                                    <div class="col-6 d-flex justify-content-center flex-column
+                                        row-gap-1">
+                                        <h6 class="btn-normal fw-bold">Gopay</h6>
+                                        <div class="d-flex column-gap-1 py-2">
+                                            <img class="logo-payment-type"
+                                                src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/gopay-54a920655c809232af3d38437181f5aa1e439186b6630aa5fe585862aba0a726.svg"
+                                                alt="GoPay" loading="lazy" width="30px" height="20px">
+                                            <img class="logo-payment-type"
+                                                src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/qris-5ab65ea8ea12e00daee664042ed976a75c574fcd2fb1acd04e6cfc773d9bda54.svg"
+                                                alt="QRIS" loading="lazy" width="30px" height="20px">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-end align-items-center">
+                                        <svg height="16" width="16" fill="currentColor" viewBox="0 0 16 16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            style="color: var(--icon-primary,hsla(220, 42%, 24%, 1));">
+                                            <path
+                                                d="M10.71,7.29 L6.71,3.29 C6.53,3.11 6.28,3 6,3 C5.45,3 5,3.45 5,4 C5,4.28 5.11,4.53 5.29,4.71 L8.59,8 L5.3,11.29 C5.11,11.47 5,11.72 5,12 C5,12.55 5.45,13 6,13 C6.28,13 6.53,12.89 6.71,12.71 L10.71,8.71 C10.89,8.53 11,8.28 11,8 C11,7.72 10.89,7.47 10.71,7.29 Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Barcode -->
+                            <div class="barcode d-none" id="barcode">
+                                <div class="page-title d-flex justify-content-between">
+                                    <span class="title-text text-actionable-bold">GoPay</span>
+                                    <span class="flex-right"><img class="logo page-logo"
+                                            src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/gopay-54a920655c809232af3d38437181f5aa1e439186b6630aa5fe585862aba0a726.svg"
+                                            alt="titleLogo">
+                                    </span>
+                                </div>
+                                <div class="qr-wrapper text-center" id="qr-image">
+                                    <img class="qr-image"
+                                        src="https://api.sandbox.midtrans.com/v2/qris/82fb47e4-59b1-4566-8d2b-4314baf62eb6/qr-code"
+                                        alt="qr-code">
+                                </div>
+                                <div class="collapsible-content">
+                                    <div class="collapsible pay-instruction">
+                                        <div class="collapse-button pay-instruction d-flex column-gap-1 cursor-pointer"
+                                            id="how-to">
+                                            <img class="logo"
+                                                src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/instruction-question-3c9953f952f0e553db6ca61c3a045a2a8df262c439aca3cc997d852a0d265960.svg"
+                                                alt="question">
+                                            <div class="pay-instruction-text text-primary fw-semibold">How to pay</div>
+                                            <img class="logo"
+                                                src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/instruction-dual-arrow-1ee12b0f44bc58056fb70e2fc1627fa5c72df960605a40b1403f7f960dc47aa3.svg"
+                                                alt="dual-arrow">
+                                        </div>
+                                        <div class="content pay-instruction d-none" id="how-to-content">
+                                            <ol style="padding-inline-start: 18px;" class="numbered-list-point">
+                                                <li>
+                                                    <div>Open your <strong>Gojek</strong>, <strong>GoPay</strong> or
+                                                        <strong>other e-wallet app</strong>.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>Scan the <strong>QR code</strong> on your monitor.</div>
+                                                </li>
+                                                <li>
+                                                    <div>Confirm payment in the app.</div>
+                                                </li>
+                                                <li>
+                                                    <div>Payment completed.</div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr-separator">
+                                    <hr class="separator-line">
+                                </div>
+                                <div class="button-down text-center">
+                                    <button type="button" class="w-100 btn btn-secondary rounded-5">Back to
+                                        merchant</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer justify-content-between modal-items" id="midtrans-footer">
+                            <button type="button"
+                                class="language-changer-button d-flex align-items-center border-0 column-gap-1">
+                                <img src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/globe-daffe164e7259460c4971dab3e05dd759f2e3398ff4c9a366b17c95fa5636afd.svg"
+                                    alt="globe" loading="lazy" width="16px" height="16px">
+                                <div>
+                                    <img class="language-expand-more"
+                                        src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/expand_more-a0bd897d2dca356b6989d610317edbf6913f9cf15007ac247344caadcc9a0a44.svg"
+                                        alt="expand" loading="lazy">
+                                </div>
+                                <div class="language-title">EN</div>
+                            </button>
+                            <img class="logo-powered-by-midtrans"
+                                src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/powered-by-midtrans-0c2edfb5e9de4013f152a7411a109dfa8d891ea8fb4c21ac8c5e6a93da6eaabc.svg"
+                                alt="PoweredByMidtrans" loading="lazy" width="156px" height="21px">
+                        </div>
+
+                        <!-- Success pay -->
+                        <div class="row h-100 d-none" id="success-midtrans">
+                            <div class="col-12">
+                                <div class="success-wrapper h-75 d-flex flex-column justify-content-center row-gap-1">
+                                    <div class="content text-center">
+                                        <img src="https://d2f3dnusg0rbp7.cloudfront.net/snap/assets/success-checkmark-e0b595cce46c5051628a0bd932569399de409e86a01fd07d13b62b95739df50b.svg"
+                                            alt="checkmark-success" class="checkmark mb-4">
+                                        <div class="fs-3 fw-semibold">Payment successful</div>
+                                        <div class="d-flex justify-content-center">
+                                            <hr class="separator bg-success">
+                                        </div>
+                                        <h2 class="midtrans__total"></h2>
+                                        <h6 class="btn-small">Order ID #SAMPLE_DEMO_1697250649328</h6>
+                                    </div>
+                                </div>
+                                <div
+                                    class="h-25 text-center d-flex flex-column justify-content-center align-items-center p-3">
+                                    <h6>Redirect back autometically in <span id="time-left"></span> second </h6>
+                                    <button type="button" class="w-100 btn btn-secondary rounded-5  btn-theme">Return to
+                                        merchants page
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="../assets/js/shop-checkout.js"></script>
+</body>
+
+</html>
