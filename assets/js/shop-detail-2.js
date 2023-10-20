@@ -86,7 +86,7 @@ function cart(productId) {
   })
   .then(response => response.json())
   .then(data => {
-    alert(`${data} sukses dimasukkan ke keranjang`)
+    alert(`barang sukses dimasukkan ke keranjang`)
   })
   .catch(error => {
     console.error('Error:', error);
