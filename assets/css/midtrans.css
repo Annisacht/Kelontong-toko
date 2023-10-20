@@ -1,0 +1,72 @@
+:root {
+  --typography: Poppins;
+  --header-color: #002855;
+  --button-color: #383942;
+  --input-border-radius: 40px;
+  --button-border-radius: 40px;
+  --header-font-color: #ffffff;
+  --button-font-color: #ffffff;
+  --button-hover-color: #6a6b74;
+  --button-active-color: #4c4d56;
+  --button-disabled-color: #565760;
+}
+
+body {
+  font-family: "Inter", serif;
+}
+
+.btn-big {
+  font-size: 1.5rem;
+}
+.btn-normal {
+  font-size: 1rem;
+}
+.btn-medium {
+  font-size: 0.8rem;
+}
+.btn-small {
+  font-size: 0.6rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.modal-content {
+  max-width: 420px;
+  height: 640px;
+}
+
+.modal-header {
+  padding: 16px;
+  background: var(--header-color, #102c42);
+  color: var(--header-font-color, #fff);
+  height: 72px;
+}
+.btn__order__details {
+  font-size: 0.7rem !important;
+  cursor: pointer;
+}
+.copy__id {
+  width: 10px;
+  height: auto;
+}
+
+.qr-image {
+  width: 222px;
+  height: 222px;
+}
+.page-logo {
+  height: auto;
+  width: 34px;
+}
+.success-wrapper {
+  background: #e8fbf7;
+}
+.separator {
+  height: 5px !important;
+  width: 50px !important;
+  background: #00d5b5 !important;
+  border: none;
+  border-radius: 10px;
+}
