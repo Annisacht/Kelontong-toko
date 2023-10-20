@@ -181,7 +181,7 @@ function showSuccess() {
 
     if (time === 0) {
       clearInterval(intervalId);
-      window.location.href = "pay-success-page.html";
+      window.location.href = "pay-success.html";
     }
   }, 1000);
 
