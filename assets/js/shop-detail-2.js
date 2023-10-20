@@ -52,42 +52,44 @@ function showDetail (){
   })[0];
 
 
-  detail.querySelector('.product-img img').src = thisProduct.image;
-  detail.querySelector('.name').innerText = thisProduct.name;
-  detail.querySelector('.price').innerText = thisProduct.price;
-  detail.querySelector('.desc-2').innerText = thisProduct.desc;
   
-  // add stas product similiar
-  let listProduct = document.querySelector('.listProduct');
-  (products.filter(item.id != productId))
-  .forEach(product => {
-    let newProduct = document.createElement('a');
-    newProduct.href= 'shop-detail-2.html?id' = product.id;
-    newProduct.classliast.add('item');
-    newProduct.innerHTML = `<div class="card-body col-md-2 col-sm-2 text-align-center p-3 border border-2 border-info rounded">
-        <img src="${item.img}" alt="">
-        <h5 class="card-title">${item.name}</h5>
-        <p class="card-text">${item.price}</p>
-   </div>`;
-    listProduct.appendChild(newProduct)
-  })
+  var img = detail.querySelector('.product-img img').src = thisProduct.image;
+  var name = detail.querySelector('.name').innerText = thisProduct.name;
+  var price = detail.querySelector('.price').innerText = thisProduct.price;
+  var desc = detail.querySelector('.desc-2').innerText = thisProduct.desc;
+
 
 }
 
 // Fungsi untuk menambahkan produk ke keranjang
 function cart(productId) {
-  fetch('https://652760d5917d673fd76d9d06.mockapi.io/api/v1/product-list-kelontong/cart/add', {
-      method: 'POST',
-      body: JSON.stringify({ productId }),
-      headers: {
-          'Content-Type': 'application/json'
-      }
+  var img = document.querySelector('.product-img img').src;
+  var name = document.querySelector('.name').innerText;
+  var price = document.querySelector('.price').innerText;
+  var qty = num.innerText;
+  var total = parseFloat(price.replace('Rp ', '').replace(',', '')) * parseInt(qty);
+
+  // Mengirim data ke server dengan metode POST
+  fetch('https://652760d5917d673fd76d9d06.mockapi.io/api/v1/product-list-kelontong/cart', {
+    method: 'POST',
+    body: JSON.stringify({
+      id: productId,
+      name: name,
+      img: img,
+      price: price,
+      qty: qty,
+      total: total,
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
   })
   .then(response => response.json())
   .then(data => {
-    alert (`${data} sukses dimasukkan ke keranjang`)
+    alert(`${data} sukses dimasukkan ke keranjang`)
   })
   .catch(error => {
-      console.error('Error:', error);
+    console.error('Error:', error);
   });
 }
+
