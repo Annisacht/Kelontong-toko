@@ -32,7 +32,17 @@
 
 
 /* products detail */
+.row{
+    margin-right: 10%;
+}
 
+.num{
+    text-align: center;
+    border: #0376CB 1px solid;
+    width: 50%;
+    border-radius: 10px;
+    padding-top: 5px;
+}
 
 /* footer */
 footer a h1{
